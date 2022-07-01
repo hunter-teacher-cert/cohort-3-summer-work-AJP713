@@ -1,0 +1,32 @@
+ Shell Commands
+
+cd    Change directory
+cd ~    Go to root 
+cd ..   Go up one directory level
+ls      List all directories
+
+javac Filename.java     -- compiles program
+java Filenam    -- runs program after it's compiled
+
+------------------------------------
+
+One line conditional If
+
+String someString = (x>10000) ? "bag" : "small";
+test condition, if true, if false
+
+--------------------------
+
+To get ASCII # from character
+char ch = 'Z';
+System.out.println( (int)ch);    
+
+To get character from ASCII number
+int anInt = 90;
+System.out.println( (char)anInt);
+----------------------------
+
+int theArray[] ;  //creates array of integers
+theArray[] = new int[17];  //creates an array that can hold 17 integers
+
+int theArray[] = new int[]{55, 65, 70, 75, 85}; //creates array of size 5 with those #s
