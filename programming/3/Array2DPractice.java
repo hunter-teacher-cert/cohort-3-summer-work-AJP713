@@ -265,8 +265,14 @@ public class Array2DPractice
     printBoard(arrCopy);
     System.out.println();
     System.out.println("This will explode the board at position 0,4 with x's");
-    explodeSquare(arrCopy,0,4);
-     printBoard(arrCopy);
+    // explodeSquare(arrCopy,0,4);
+      arrCopy[0][4]= 'c';
+      arrCopy[3][5]= 'c';
+      arrCopy[4][9]= 'c';
+      printBoard(arrCopy);
+    System.out.println();
+      explodeAllChar(arrCopy, 'c');
+      printBoard(arrCopy);
     /*
       Note, you can directly set elements in the board
       using array notation like b[3][2]='z' and you
