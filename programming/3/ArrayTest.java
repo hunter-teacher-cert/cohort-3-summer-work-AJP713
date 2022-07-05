@@ -40,7 +40,7 @@ import java.util.*;
    other methods.
 */
 
-public class Array2DPractice
+public class ArrayTest
 {
   public static char[][] buildBoard( int rows, int cols, char value )
   {
@@ -156,31 +156,15 @@ public class Array2DPractice
     // board[row+1][col-1]='X';    //bottom left
     // board[row+1][col]='X';      //bottom center
     // board[row+1][col+1]='X';    //bottom right
-
-    if(col>0){  //checks if left most column 
-      board[row][col-1]='X';    //mid left
-    }
-    if(col<board[0].length-1){
-      board[row][col+1]='X';  //mid right
-    }
-    if(row>0){   //check if not on top row, checks all 3 at once
-      board[row-1][col]='X';  //top middle
-       if(col>0){//checks if left most column 
-         board[row-1][col-1]='X';  //top left
+     for (int i = row-1; i < row+2; i++) {
+      for (int j = col-1; j < col+2; j++) {
+        if(i>0 && i<board.length-1 !(row==i && col==j)){ //&& j>0 && j<board[0].length-1 && 
+          if(&& j>0 && j<board[0].length-1 )
+          board[i][j]='x';
+          
+        }
       }
-      if(col<board[0].length-1){
-        board[row-1][col+1]='X';  //top right
-      }  
-    }
-    if(row<board.length-1){  //check if not on bottom row, all 3 at once
-       if(col>0){//checks if left most column 
-         board[row+1][col-1]='X';  //bottom left
-       }
-      board[row+1][col]='X';  //bottom middle
-      if(col<board[0].length-1){
-        board[row+1][col+1]='X';  //bottom right
-      }
-    }
+     }
   }
 
   /**
@@ -256,7 +240,7 @@ public class Array2DPractice
     System.out.println("creates a board 5 rows, 10 columns, all z");
     char[][] b = buildBoard(5,10,'z');
     printBoard(b);
-    //setRow(b,2,'@');
+    setRow(b,2,'@');
     System.out.println();
     printBoard(b);
     
@@ -264,6 +248,9 @@ public class Array2DPractice
     char[][] arrCopy = copyBoard(b);
     printBoard(arrCopy);
     System.out.println();
+    // System.out.println("This will explode the board at position 2,4 with x's");
+    // explodeSquare(arrCopy,2,4);
+    // printBoard(arrCopy);
     System.out.println("This will explode the board at position 0,4 with x's");
     explodeSquare(arrCopy,0,4);
      printBoard(arrCopy);
