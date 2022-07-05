@@ -61,8 +61,8 @@ public class Array2DPractice
   {
     /* YOUR AWESOME CODE HERE */
     for (int i = 0; i < board.length; i++) {
-    for (int j = 0; j < board[0].length; j++) {
-       System.out.print(board[i][j]); //maybe we want commas between them?
+      for (int j = 0; j < board[0].length; j++) {
+         System.out.print(board[i][j] + " "); //maybe we want commas between them?
       }
       System.out.println();
     }
@@ -101,10 +101,17 @@ public class Array2DPractice
      creates and returns a new 2D array of char the same size as
      original and copies all the elements
   */
-  // public static char[][] copyBoard( char[][] original )
-  // {
-  //   /* YOUR AWESOME CODE HERE */
-  // }
+  public static char[][] copyBoard( char[][] original )
+  {
+    char[][] newBoard = new char[original.length][original[0].length];
+    
+    for (int i = 0; i < original.length; i++) {
+      for (int j = 0; j < original[i].length; j++) {
+        newBoard[i][j]=original[i][j];
+      }
+    }
+    return newBoard;
+  }
 
 
   /**
@@ -140,6 +147,39 @@ public class Array2DPractice
   public static void explodeSquare( char[][] board, int row, int col )
   {
     /* YOUR AWESOME CODE HERE */
+    // board[row-1][col-1]='X';  //up left
+    // board[row-1][col]='X';    //up center
+    // board[row-1][col+1]='X';  //up right
+    // board[row][col-1]='X';       //mid left
+    // board[row][col+1]='X';       //mid right
+    // board[row+1][col-1]='X';
+    // board[row+1][col]='X';
+    // board[row+1][col+1]='X';
+
+    if(col>0){  //checks if left most column 
+      board[row][col-1]='X';  
+    }
+    if(col<board[0].length-1){
+      board[row][col+1]='X';
+    }
+    if(row>0){   //check if not on top row
+      board[row-1][col]='X';
+       if(col>0){//checks if left most column 
+         board[row-1][col-1]='X';
+      }
+      if(col<board[0].length-1){
+        board[row-1][col+1]='X';
+      }  
+    }
+    if(row<board.length-1){  //check if not on bottom row
+       if(col>0){//checks if left most column 
+         board[row+1][col-1]='X';
+       }
+      board[row+1][col]='X';
+      if(col<board[0].length-1){
+        board[row+1][col+1]='X';  
+      }
+    }
   }
 
   /**
@@ -206,11 +246,20 @@ public class Array2DPractice
 
   public static void main( String[] args )
   {
+    System.out.println("creates a board 5 rows, 10 columns, all z");
     char[][] b = buildBoard(5,10,'z');
     printBoard(b);
     setRow(b,2,'@');
     System.out.println();
     printBoard(b);
+    
+    System.out.println();
+    char[][] arrCopy = copyBoard(b);
+    printBoard(arrCopy);
+    System.out.println();
+    System.out.println("This will explode the board at position 2,4 with x's");
+    explodeSquare(arrCopy,3,9);
+     printBoard(arrCopy);
     /*
       Note, you can directly set elements in the board
       using array notation like b[3][2]='z' and you
