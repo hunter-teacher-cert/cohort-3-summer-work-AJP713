@@ -211,7 +211,7 @@ public class ArrayPractice
 
     /* YOUR BRILLIANT CODE HERE */
     for(int i=0; i<data.length;i++){
-      if(data[i]%2==0){
+      if(data[i]%2==1){
         count ++;
       }
     }
@@ -221,6 +221,7 @@ public class ArrayPractice
     return count;
   }
 
+  
   /**
      Parameters:
      data - an array of integers
