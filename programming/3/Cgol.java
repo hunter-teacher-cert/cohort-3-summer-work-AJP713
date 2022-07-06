@@ -87,11 +87,9 @@ public static void printBoard( char[][] board )
       int numNei=0;
       for (int i = r-1; i < r+2; i++) {
       for (int j = c-1; j < c+2; j++) {
-        if(i > -1 && 
-						i < board.length && 
+        if(i > -1 && i < board.length && 
 						!(r==i && c==j) &&
-						j > -1 &&
-						j<board[0].length){
+						j > -1 && j<board[0].length){
 				
             if(board[i][j]==alive){numNei++;}
           
@@ -110,15 +108,15 @@ public static void printBoard( char[][] board )
   */
   public static char getNextGenCell( char[][] board,int r, int c )
   {
-    int numN = countNeighbours(board, r, c);
-    if(board[r][c]==alive){
-      if(numN == 2 || numN ==3){
+    int numN = countNeighbours(board, r, c);// counts how many neighbors for the cell
+    if(board[r][c]==alive){  
+      if(numN == 2 || numN ==3){ //when starting alive and 2 or 3 neighbors
         return alive;
       }
       else{
         return dead;
       }
-    }else{
+    }else{ //when starting cell is dead
       if(numN == 3){
         return alive;
       }
@@ -143,6 +141,7 @@ public static void printBoard( char[][] board )
     return newBoard;
   }
 
+  
 
   public static void main( String[] args )
   {
@@ -159,15 +158,19 @@ public static void printBoard( char[][] board )
      setCell(board, 2, 2, alive);
 
 
-     System.out.println("Gen X:");
+    System.out.println("Gen X:");
     printBoard(board);
-    // System.out.println(countNeighbours(board,0,0));
+    // System.out.println(countNeighbours(board,1,1));
+    // System.out.println(getNextGenCell(board,1,1));
+    // System.out.println(countNeighbours(board,1,2));
+    // System.out.println(getNextGenCell(board,1,2));
+    // System.out.println(countNeighbours(board,10,10));
     // System.out.println(getNextGenCell(board,10,10));
     // System.out.println(getNextGenCell(board,0,1));
    
      System.out.println("--------------------------\n\n");
     
-    board = generateNextBoard(board);
+     board = generateNextBoard(board);
    
     for(int i = 1; i<20; i++){
       System.out.println();
@@ -178,17 +181,17 @@ public static void printBoard( char[][] board )
     printBoard(board);
     }
     System.out.println("--------------------------\n\n");
-    char[][] board2 =createRandomBoard(10,10,50);
-    printBoard(board2);
-    // 
+    // char[][] board2 =createRandomBoard(10,10,50);
+    // printBoard(board2);
+    // // 
 
-    for(int i = 1; i<20; i++){
-      System.out.println();
-      System.out.println("--------------------------\n\n");
-      System.out.println("Gen X:" + i );
-      board2 = generateNextBoard(board2);
-      printBoard(board2);
-    }
+    // for(int i = 1; i<20; i++){
+    //   System.out.println();
+    //   System.out.println("--------------------------\n\n");
+    //   System.out.println("Gen X:" + i );
+    //   board2 = generateNextBoard(board2);
+    //   printBoard(board2);
+    // }
    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
