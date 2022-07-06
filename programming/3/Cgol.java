@@ -1,10 +1,11 @@
 import java.io.*;
 import java.util.*;
+import java.util.Random;
 
 /**
- * Conway's Game of Life by Team AreWeSentientYet?
- * First Last
- * collaborators: First Last, First Last
+ * Conway's Game of Life by Team 7
+ * Adam Prado
+ * Michael Randazzo, Aasine Cassara,	Jenna Lin
  */
 
 /**
@@ -21,7 +22,8 @@ import java.util.*;
 
 public class Cgol
 {
-
+static char dead = '-';
+static char alive = '@';
   //create, initialize, and return  empty board (all cells dead)
   public static char[][] createNewBoard( int rows, int cols )
   {
@@ -29,17 +31,37 @@ public class Cgol
       char [][] board = new char[rows][cols];
         for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-        board[i][j]='O';
+        board[i][j]= dead;
       }
     }
     return board;
   
 
   }
+public static char[][] createRandomBoard( int rows, int cols, int prob )
+  {
+    
+    Random rand =  new Random();
+    int randomNum = rand.nextInt(101);
+    
+      char [][] board = new char[rows][cols];
+        for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+          randomNum = rand.nextInt(101);
+          if(prob<randomNum){
+            board[i][j]= dead;
+          }else{
+            board[i][j]= alive;
+          }
+    }
+   
+  
 
-
+  }
+    return board;
+}
   //print the board to the terminal
-  public static void printBoard( char[][] board )
+public static void printBoard( char[][] board )
   {
  for (int i = 0; i < board.length; i++)
     {
@@ -71,7 +93,7 @@ public class Cgol
 						j > -1 &&
 						j<board[0].length){
 				
-            if(board[i][j]=='X'){numNei++;}
+            if(board[i][j]==alive){numNei++;}
           
         }
       }
@@ -89,19 +111,19 @@ public class Cgol
   public static char getNextGenCell( char[][] board,int r, int c )
   {
     int numN = countNeighbours(board, r, c);
-    if(board[r][c]=='X'){
+    if(board[r][c]==alive){
       if(numN == 2 || numN ==3){
-        return 'X';
+        return alive;
       }
       else{
-        return 'O';
+        return dead;
       }
     }else{
       if(numN == 3){
-        return 'X';
+        return alive;
       }
       else{
-        return 'O';
+        return dead;
       }
     }
     
@@ -129,15 +151,14 @@ public class Cgol
     board = createNewBoard(10,10);
     
     //breathe life into some cells:
-     setCell(board, 0, 1, 'X');
-     setCell(board, 1, 2, 'X');
-     setCell(board, 2, 0, 'X');
-     setCell(board, 2, 1, 'X');
-    setCell(board, 2, 2, 'X');
-    // // TASK:
-    // // Once your initial version is running,
-    // // try out different starting configurations of living cells...
-    // // (Feel free to comment out the above three lines.)
+    // sets up a "glider"
+     setCell(board, 0, 1, alive);
+     setCell(board, 1, 2, alive);
+     setCell(board, 2, 0, alive);
+     setCell(board, 2, 1, alive);
+     setCell(board, 2, 2, alive);
+
+
      System.out.println("Gen X:");
     printBoard(board);
     // System.out.println(countNeighbours(board,0,0));
@@ -149,13 +170,26 @@ public class Cgol
     board = generateNextBoard(board);
    
     for(int i = 1; i<20; i++){
+      System.out.println();
        System.out.println("--------------------------\n\n");
     
     board = generateNextBoard(board);
     System.out.println("Gen X:" + i );
     printBoard(board);
     }
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    System.out.println("--------------------------\n\n");
+    char[][] board2 =createRandomBoard(10,10,50);
+    printBoard(board2);
+    // 
+
+    for(int i = 1; i<20; i++){
+      System.out.println();
+      System.out.println("--------------------------\n\n");
+      System.out.println("Gen X:" + i );
+      board2 = generateNextBoard(board2);
+      printBoard(board2);
+    }
+   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
 }//end class
