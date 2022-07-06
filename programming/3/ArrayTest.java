@@ -1,4 +1,44 @@
+/**
+ * Array2DPractice by Team 9
+ * Adam Prado
+ * Sarah McCoy, Kirk Martin, Jihae Park
+ */
 
+import java.io.*;
+import java.util.*;
+
+/**
+   INSTRUCTIONS:
+   Place this file in a folder named programming/3/.
+   This file contains the following completed method. Use it as a model
+   to help you with the other methods:
+   - buildBoard
+   This file also contains stubs (empty methods) for the following
+   methods (split into 3 levels):
+   Basic level (complete all):
+   - printBoard *
+   - copyBoard *
+   Intermediate level (complete Basic methods plus this method):
+   - explodeSquare *
+   Advanced level (complete Basic + Intermediate + these two methods):
+   - explodeAllChar *
+   - downString
+   The routines with the * will be particularly helpful for the
+   Conway's Game of Life project that you'll work on after this one.
+*/
+
+
+/**
+   creates and returns a 2D array of size rowsxcols chars. All elements
+   in the 2D array will be set to the char value.
+   Ex: buildBoard(3,4,'x') will return this 2D array:
+   xxxx
+   xxxx
+   xxxx
+   xxxx
+   Use this completed method as an example to help you with some of the
+   other methods.
+*/
 
 public class ArrayTest
 {
@@ -21,7 +61,6 @@ public class ArrayTest
   {
     /* YOUR AWESOME CODE HERE */
     for (int i = 0; i < board.length; i++) {
-			//could it be board[i].length in case of jagged array?
       for (int j = 0; j < board[0].length; j++) {
          System.out.print(board[i][j] + " "); //maybe we want commas between them?
       }
@@ -107,8 +146,6 @@ public class ArrayTest
   */
   public static void explodeSquare( char[][] board, int row, int col )
   {
-    
-		//TRYING DIFFERENT METHOD HERE--iterate through the items around the given one, and check if they are an edge.  If not edge, explode.....but having trouble with the edge cases.  Works in the middle.
      for (int i = row-1; i < row+2; i++) {
       for (int j = col-1; j < col+2; j++) {
         if(i > -1 && 
@@ -122,6 +159,41 @@ public class ArrayTest
         }
       }
      }
+    /* YOUR AWESOME CODE HERE */ 
+    // below are the positions of all neighboring cells
+    // board[row-1][col-1]='X';  //up left
+    // board[row-1][col]='X';    //up center
+    // board[row-1][col+1]='X';  //up right
+    // board[row][col-1]='X';       //mid left
+    // board[row][col+1]='X';       //mid right
+    // board[row+1][col-1]='X';    //bottom left
+    // board[row+1][col]='X';      //bottom center
+    // board[row+1][col+1]='X';    //bottom right
+
+    // if(col>0){  //checks if left most column 
+    //   board[row][col-1]='X';    //mid left
+    // }
+    // if(col<board[0].length-1){
+    //   board[row][col+1]='X';  //mid right
+    // }
+    // if(row>0){   //check if not on top row, checks all 3 at once
+    //   board[row-1][col]='X';  //top middle
+    //    if(col>0){//checks if left most column 
+    //      board[row-1][col-1]='X';  //top left
+    //   }
+    //   if(col<board[0].length-1){
+    //     board[row-1][col+1]='X';  //top right
+    //   }  
+    // }
+    // if(row<board.length-1){  //check if not on bottom row, all 3 at once
+    //    if(col>0){//checks if left most column 
+    //      board[row+1][col-1]='X';  //bottom left
+    //    }
+    //   board[row+1][col]='X';  //bottom middle
+    //   if(col<board[0].length-1){
+    //     board[row+1][col+1]='X';  //bottom right
+    //   }
+    // }
   }
 
   /**
@@ -195,32 +267,27 @@ public class ArrayTest
   public static void main( String[] args )
   {
     System.out.println("creates a board 5 rows, 10 columns, all z");
-    char[][] b = buildBoard(5,10,'z');
+    char[][] b = buildBoard(10,10,'a');
     printBoard(b);
-		//replace 3rd row with "@"
-    setRow(b,2,'@');
+    //setRow(b,2,'@');
     System.out.println();
     printBoard(b);
     
     System.out.println();
-		//copy board and print
     char[][] arrCopy = copyBoard(b);
     printBoard(arrCopy);
     System.out.println();
-   
-		//explode tests
     System.out.println("This will explode the board at position 0,4 with x's");
-		//re-initializing the board to zs
-		char[][] c = buildBoard(5,10,'z');
-    explodeSquare(c,0,4);
-    printBoard(c);
-
-		System.out.println();
-		
-		System.out.println("This will explode the board at position 0,0 with x's");
-		char[][] d = buildBoard(5,10,'z');
-    explodeSquare(d,4,9);
-		printBoard(d);
+    // explodeSquare(arrCopy,0,4);
+      arrCopy[0][4]= 'c';
+      arrCopy[3][5]= 'c';
+      arrCopy[4][9]= 'c';
+      arrCopy[4][8]= 'c';
+      printBoard(arrCopy);
+    System.out.println();
+      explodeAllChar(arrCopy, 'c');
+      explodeAllChar(arrCopy, 'z');
+      printBoard(arrCopy);
     /*
       Note, you can directly set elements in the board
       using array notation like b[3][2]='z' and you
