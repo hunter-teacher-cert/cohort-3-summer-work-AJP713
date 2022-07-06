@@ -20,11 +20,20 @@ import java.util.Random;
    NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation.
 */
 
-public class Cgol
+public class CgolAnimate
 {
 static char dead = '-';
 static char alive = '@';
 
+  static String CLEAR_SCREEN =  "\033[2J";
+  static String TO_TOP_OF_SCREEN = "\033[1;1H";
+  static String HIDE_CURSOR = "\033[?25l";
+
+   public static void wait(int millis){
+    try{
+        Thread.sleep(millis);
+    }catch(InterruptedException e){}
+  }
 
   
   //create, initialize, and return  empty board (all cells dead)
@@ -150,40 +159,52 @@ public static void printBoard( char[][] board )
   {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     char[][] board;
-    board = createNewBoard(10,10);
-    
+    //board = createNewBoard(10,10);
+    board = createRandomBoard(30,50,50);
     //breathe life into some cells:
     // sets up a "glider"
-     setCell(board, 0, 1, alive);
-     setCell(board, 1, 2, alive);
-     setCell(board, 2, 0, alive);
-     setCell(board, 2, 1, alive);
-     setCell(board, 2, 2, alive);
+     // setCell(board, 0, 1, alive);
+     // setCell(board, 1, 2, alive);
+     // setCell(board, 2, 0, alive);
+     // setCell(board, 2, 1, alive);
+     // setCell(board, 2, 2, alive);
 
 
-    System.out.println("Gen X:");
-    printBoard(board);
-    // System.out.println(countNeighbours(board,1,1));
-    // System.out.println(getNextGenCell(board,1,1));
-    // System.out.println(countNeighbours(board,1,2));
-    // System.out.println(getNextGenCell(board,1,2));
-    // System.out.println(countNeighbours(board,9,9));
-    // System.out.println(getNextGenCell(board,9,9));
+    //System.out.println("Gen X:");
+   // printBoard(board);
+    System.out.println(CLEAR_SCREEN + HIDE_CURSOR);
+    //printBoard(board);
+
+       for(int i = 0 ; i < 50; i++){
+      //Do this each time you want to display a board
+      //and overwrite the old version.
+      System.out.println(TO_TOP_OF_SCREEN);
+      board = generateNextBoard(board);
+    
+      printBoard(board);
+      wait(150);
+    }
+    // // System.out.println(countNeighbours(board,1,1));
+    // // System.out.println(getNextGenCell(board,1,1));
+    // // System.out.println(countNeighbours(board,1,2));
+    // // System.out.println(getNextGenCell(board,1,2));
+    // // System.out.println(countNeighbours(board,9,9));
+    // // System.out.println(getNextGenCell(board,9,9));
   
    
-     System.out.println("--------------------------\n\n");
+    //  System.out.println("--------------------------\n\n");
     
-     board = generateNextBoard(board);
+    //  board = generateNextBoard(board);
    
-    for(int i = 1; i<20; i++){
-      System.out.println();
-       System.out.println("--------------------------\n\n");
+    // for(int i = 1; i<20; i++){
+    //   System.out.println();
+    //    System.out.println("--------------------------\n\n");
     
-    board = generateNextBoard(board);
-    System.out.println("Gen X:" + i );
-    printBoard(board);
-    }
-    System.out.println("--------------------------\n\n");
+    // board = generateNextBoard(board);
+    // System.out.println("Gen X:" + i );
+    // printBoard(board);
+    // }
+    // System.out.println("--------------------------\n\n");
     // char[][] board2 =createRandomBoard(10,10,50);
     // printBoard(board2);
     // // 
