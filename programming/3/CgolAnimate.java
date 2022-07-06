@@ -168,12 +168,11 @@ public static void printBoard( char[][] board )
      // setCell(board, 2, 0, alive);
      // setCell(board, 2, 1, alive);
      // setCell(board, 2, 2, alive);
-
-
     //System.out.println("Gen X:");
    // printBoard(board);
+    
     System.out.println(CLEAR_SCREEN + HIDE_CURSOR);
-    //printBoard(board);
+  
 
        for(int i = 0 ; i < 50; i++){
       //Do this each time you want to display a board

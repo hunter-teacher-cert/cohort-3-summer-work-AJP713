@@ -261,6 +261,14 @@ public class Array2DPractice
   public static void downString( char[][] board, int row, int col, String word )
   {
     /* YOUR AWESOME CODE HERE */
+    int i = 0;
+        while (i < word.length() && row < board.length)
+        {
+            board[row][col] = word.charAt(i);
+            row++;
+            i++;
+        }
+
   }
 
 
