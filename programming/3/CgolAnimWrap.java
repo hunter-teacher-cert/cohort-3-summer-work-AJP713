@@ -105,13 +105,19 @@ public static void printBoard( char[][] board )
 				
             if(board[i][j]==alive){numNei++;} //if neighbor is alive adds to the counter
           
-        }  else if(i==-1){
-          System.out.println("top");
-          // if(board[board.length-1][j]==alive){numNei++;}
-        } else if(i==board.length){
-          System.out.println("bottom");
-          //if(board[0][j]==alive){numNei++;}
-        }
+        }  else if(i==-1 && !(r==i && c==j) && j > -1 && j<board[0].length){ //if cell is on top row, adds wrapped cells on the bottom row
+          //System.out.println("top");
+          if(board[board.length-1][j]==alive){numNei++;}
+        } else if(i==board.length && !(r==i && c==j) && j > -1 && j<board[0].length){//if cell is on bottom row, adds wrapped cells on the top row
+          //System.out.println("bottom");
+          if(board[0][j]==alive){numNei++;}
+        }else if(j==-1 && i > -1 && i < board.length && !(r==i && c==j) ){//if left wraps check far right column
+         // System.out.println("left");
+          if(board[i][board[0].length-1]==alive){numNei++;}
+        }else if(j==board[0].length && i > -1 && i < board.length && !(r==i && c==j)){  //if right side wraps
+          //System.out.println("right");
+          if(board[i][0]==alive){numNei++;}
+        } //TODO 4corner cases 
       }
     
  
@@ -171,8 +177,19 @@ public static void printBoard( char[][] board )
      setCell(board, 2, 0, alive);
      setCell(board, 2, 1, alive);
      setCell(board, 2, 2, alive);
+    setCell(board, 0, 3, alive);
+    setCell(board, 4, 4, alive);
+    setCell(board, 4, 3, alive);
+     setCell(board, 1, 4, alive);
     printBoard(board);
       System.out.println();
+    System.out.println("Count Neigh 0, 1:  "+ countNeighbours(board, 0,1) + "  ->1");
+    System.out.println("Count Neigh 4, 2:  "+ countNeighbours(board, 4,2) + "  ->3");
+    System.out.println("Count Neigh 4, 3:  "+ countNeighbours(board, 4,3) + "  ->2");
+    System.out.println("Count Neigh 1, 4:  "+ countNeighbours(board, 1,4) + "  ->2");
+    System.out.println("Count Neigh 2, 0:  "+ countNeighbours(board, 2,0) + "  ->2");
+    System.out.println("Count Neigh 0, 0:  "+ countNeighbours(board, 0,0) + "  ->2");
+    System.out.println("Count Neigh 2, 0:  "+ countNeighbours(board, 2,0) + "  ->2");
     //breathe life into some cells:
     // sets up a "glider"
      // setCell(board, 0, 1, alive);
@@ -184,17 +201,17 @@ public static void printBoard( char[][] board )
    // printBoard(board);
 
     
-    // System.out.println(CLEAR_SCREEN + HIDE_CURSOR);
-    //board = createRandomBoard(30,50,50);
-    //    for(int i = 0 ; i < 200; i++){
-    //   //Do this each time you want to display a board
-    //   //and overwrite the old version.
-    //   System.out.println(TO_TOP_OF_SCREEN);
-    //   board = generateNextBoard(board);
+    System.out.println(CLEAR_SCREEN + HIDE_CURSOR);
+    board = createRandomBoard(30,50,50);
+       for(int i = 0 ; i < 200; i++){
+      //Do this each time you want to display a board
+      //and overwrite the old version.
+      System.out.println(TO_TOP_OF_SCREEN);
+      board = generateNextBoard(board);
     
-    //   printBoard(board);
-    //   wait(150);
-    // }
+      printBoard(board);
+      wait(150);
+    }
     
    
   }//end main()
