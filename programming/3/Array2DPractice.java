@@ -295,6 +295,11 @@ public class Array2DPractice
       explodeAllChar(arrCopy, 'c');
       explodeAllChar(arrCopy, 'z');
       printBoard(arrCopy);
+System.out.println();
+    System.out.println("This will create a down string");
+    downString(arrCopy,2,1,"Hello");
+      printBoard(arrCopy);
+    
     /*
       Note, you can directly set elements in the board
       using array notation like b[3][2]='z' and you

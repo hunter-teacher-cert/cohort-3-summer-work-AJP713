@@ -57,9 +57,6 @@ public static char[][] createRandomBoard( int rows, int cols, int prob )
             board[i][j]= alive;
           }
     }
-   
-  
-
   }
     return board;
 }
