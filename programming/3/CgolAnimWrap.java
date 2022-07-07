@@ -118,6 +118,10 @@ public static void printBoard( char[][] board )
           //System.out.println("right");
           if(board[i][0]==alive){numNei++;}
         } //TODO 4corner cases 
+        //top left --> bot right
+        //bot right --> top left
+        //top right --> bot left
+        //bot left -- top right
       }
     
  
