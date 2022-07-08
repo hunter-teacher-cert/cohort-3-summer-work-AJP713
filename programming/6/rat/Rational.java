@@ -100,16 +100,21 @@ public class Rational
   }
  
 
+ //AKA reduce()
+  //this simplifies a fraction by finding the GCF of the num and den and then dividing both by that value, if no GCF nothing changes
+  //no return, just changes the original Rational Number
  public void simplify(){
-     for(int x=_numerator; x>1; x--){
-        if(_numerator%x==0 && _denominator%x==0){
+     for(int x=_numerator; x>1; x--){ //checks for GCF starting at num and going down to 1, will find the largest GCF
+       
+        if(_numerator%x==0 && _denominator%x==0){ //this checks for divisibility of the same factor in both 
           //System.out.println("Is divisible by "+ x);
           _numerator /= x;
           _denominator /= x;
         }
      }
  }
-    
+
+  //this checks if two fractions are equal and then returns true if they are and false if they do now.  Will work for equivalent fractions (1/2)==(2/4)
  public boolean equals( Rational other ){
    other.simplify();
    this.simplify();
@@ -117,5 +122,12 @@ public class Rational
           _denominator == other._denominator);
  }
 
+public void add(Rational r ){
+  int newNum = (this._numerator*r._denominator)+(r._numerator*this._denominator);
+  int newDen = (this._denominator*r._denominator);
+  this._numerator = newNum;
+  this._denominator=newDen;
+  this.simplify();
+}
 
 }//end class

@@ -57,7 +57,13 @@ public class Driver
       w = new Rational( 3  , 6);
       System.out.println("Is "+ w + " equal to " + x);
       System.out.println(x.equals(w));
-
+    //checking addition
+      System.out.println();
+      x = new Rational( 1  , 3);
+      w = new Rational( 1  , 3);
+      System.out.print( w + " + " + x + " = ");
+      w.add(x);
+      System.out.println(w);
   }
 
 }//end class
