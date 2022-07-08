@@ -58,8 +58,8 @@ public class Time {
 
 	// your code here
       this.hours = hrs;
-	this.minutes = mins;
-	this.seconds = secs;
+	    this.minutes = mins;
+	    this.seconds = secs;
 
     }
 
@@ -86,8 +86,8 @@ public class Time {
 	// add the code to add the time represented by other
 	// to this instance.
       this.hours = hrs;
-	this.minutes = mins;
-	this.seconds = secs;
+	    this.minutes = mins;
+	    this.seconds = secs;
 
     }
 
@@ -121,11 +121,10 @@ public class Time {
       if(this.hours==other.hours && this.minutes == other.minutes && this.seconds == other.seconds){
         return true;
       }
-     
-      
-
 	return false; // change this
     }
+
+  
 // This converts the time in h:m:s into all seconds and returns an integer of the number of seconds.
   public int conv2sec(){
     return (this.seconds+( this.minutes * 60) + (this.hours*60*60));
@@ -142,15 +141,13 @@ public class Time {
     */
     public int compareTo(Time other){
 	// your code here)
-      if(this.conv2sec() == other.conv2sec()){
+      if(this.conv2sec() == other.conv2sec()){ //this uses the con2sec method to get the h,m,s into a single # of 
         return 0;
       }else if( this.conv2sec()> other.conv2sec()){
         return 1;
       }else{
         return -1;
       }
-    //int secThis = this.hours*60)+this.
-	 // change this
     }
 
 

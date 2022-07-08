@@ -17,7 +17,8 @@ public class Fence
   */
   public static String fenceR( int n )
   {
-    if(n == 1 || n==0) {return "|";}
+    if(n==0) {return "";}
+      else if(n == 1){return "|";}
     else{
       return fenceR (n-1) + "--|";   }
     
@@ -29,7 +30,7 @@ public class Fence
   public static void main( String[] args )
   {
 
-    for( int i = 1; i < 10; i++ ) {
+    for( int i = 0; i < 10; i++ ) {
       System.out.println( i + "-post fences: " );
       System.out.println( fenceR(i) );
     }
