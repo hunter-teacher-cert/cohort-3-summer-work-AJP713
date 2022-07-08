@@ -1,3 +1,4 @@
+
 /**
  * class Driver
  * tester class for class Rational
@@ -51,9 +52,10 @@ public class Driver
       System.out.println("x simplified is: " +  x );
 
       System.out.println();
+      
       x = new Rational( 2  , 4);
       w = new Rational( 3  , 6);
-      
+      System.out.println("Is "+ w + " equal to " + x);
       System.out.println(x.equals(w));
 
   }
