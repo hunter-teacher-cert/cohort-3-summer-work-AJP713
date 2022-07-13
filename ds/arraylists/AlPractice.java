@@ -89,7 +89,7 @@ public class AlPractice{
   - The dataList is modified such that all occurances of valueToRemove are removed.
   */
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
-
+      dataList.remove(valueToRemove);
   }
 
 
@@ -104,9 +104,15 @@ public class AlPractice{
   Postconditions:
   - The parameter ArrayLists should not be modified.
   */
-  public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-    return null;//placeholder to compile.
-  }
+  // public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
+  //    ArrayList<Integer>SumArray = new ArrayList<Integer>();
+  //   int tempSum = 0;
+  //   for(int i=0; i<ListA.size(); i++){
+  //     tempSum = ListA.get(i)+ ListB.get(i);
+  //     SumArray.set(i,tempSum);
+  //   }
+  //   return SumArray;//placeholder to compile.
+  // }
 
   /** zipLists
   Parameters:
@@ -128,9 +134,11 @@ public class AlPractice{
 public static void main(String[] args) {
 
     ArrayList<Integer> al;
-
+    ArrayList<Integer> al2;
+    ArrayList<Integer> alSum;
     //Uncomment these to test buildRandomList
     al = buildRandomList(10,100);
+    al2 = buildRandomList(10,100);
     System.out.println(al);
     System.out.println(sumOfList(al));
     //Uncomment these to test swapElements
@@ -138,16 +146,22 @@ public static void main(String[] args) {
     System.out.println(al);
 
     // Uncomment these to test removeValue
-    //al.add(5);
-    //al.add(10);
-    //al.add(5);
-    //al.add(13);
-    //al.set(2,5);
-    //al.set(3,5);
-    //System.out.println(al); //NOTE:  this was listed as a, not al
-    //removeValue(al,5);
-    //System.out.println(al); //NOTE:  this was listed as a, not al
+    al.add(5);
+    al.add(10);
+    
+    al.add(13);
+    al.set(2,5);
+    al.set(3,5);
+    System.out.println(al); //NOTE:  this was listed as a, not al
+    removeValue(al,5);
+    System.out.println(al); //NOTE:  this was listed as a, not al
+   //      al = buildRandomList(10,100);
+   //  al2 = buildRandomList(10,100);
+   // System.out.println(al);
+   // System.out.println(al2);
+   // System.out.println(alSum.sumLists(al,al2));
 
+  
   }
 
 

@@ -1,0 +1,43 @@
+Team:  May the 4's be with you!
+Sam L, Seth A, Anand M, Yeidy L, Patti E, Adam P. Tanya W, 
+
+Tools that Worked
+--------------------------------------------------
+Seth:  Array diagraming, white board
+Tanya = emojii check in
+Adam = skeleton with built-in tests and what the answers should be
+Sam = comments with pre and post conditions
+Seth = random grouping 
+Patti = Heterogeneous Grouping
+Yeidy = presenting work after and explaing steps, and challnege them to explain in a clearer way
+Anand = seeing several presentations with different solutions
+Patti = code along
+Tanya = team/co teaching, and helpful TAs
+Yeidy = .draw feature to be able to diagram in replit.
+----------------------------------------------------
+
+Why should we teach CS:
+
+- Growing and in-demand field.
+- Applicable skill in many areas
+- Helps critial thinking skills
+- Good practice with problem solving, breaking down steps.
+- Teaches collaboration skills
+- Open to all, at all levels
+- Combines a lot different subjects, backgrounds, ...
+- Builds language skills
+- Abstract thinking
+- More motivating than other subjects?
+- More tangible results to problems
+- 
+
+_______________________________________________
+
+What is Computer Science?
+- 
+from
+https://en.wikipedia.org/wiki/Computer_science :
+"Computer science is the study of computation, automation, and information. Computer science spans theoretical disciplines (such as algorithms, theory of computation, information theory and automation) to practical disciplines (including the design and implementation of hardware and software). Computer science is generally considered an area of academic research and distinct from computer programming."
+from
+https://www.britannica.com/science/computer-science :
+"Computer science is the study of computers and computing as well as their theoretical and practical applications."
