@@ -6,6 +6,7 @@ import java.util.Random;
  * Conway's Game of Life by Team 6
  * Adam Prado
  * Michael Randazzo, Aasine Cassara,	Jenna Lin
+ This is the basic one but there are also animated versions, "CgolAnimate" and a version with animation and wrapping on the edges "CgolAnimWrap"
  */
 
 /**
