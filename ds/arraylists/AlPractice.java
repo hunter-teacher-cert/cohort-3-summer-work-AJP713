@@ -1,3 +1,7 @@
+// Adam Prado
+// 
+//https://www.w3schools.com/java/java_arraylist.asp
+
 import java.io.*;
 import java.util.*;
 
@@ -104,15 +108,15 @@ public class AlPractice{
   Postconditions:
   - The parameter ArrayLists should not be modified.
   */
-  // public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-  //    ArrayList<Integer>SumArray = new ArrayList<Integer>();
-  //   int tempSum = 0;
-  //   for(int i=0; i<ListA.size(); i++){
-  //     tempSum = ListA.get(i)+ ListB.get(i);
-  //     SumArray.set(i,tempSum);
-  //   }
-  //   return SumArray;//placeholder to compile.
-  // }
+  public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
+     ArrayList<Integer>SumArray = new ArrayList<Integer>();
+    int tempSum = 0;
+    for(int i=0; i<ListA.size(); i++){
+      tempSum = ListA.get(i)+ ListB.get(i);
+      SumArray.set(i,tempSum);
+    }
+    return SumArray;//placeholder to compile.
+  }
 
   /** zipLists
   Parameters:
@@ -155,10 +159,13 @@ public static void main(String[] args) {
     System.out.println(al); //NOTE:  this was listed as a, not al
     removeValue(al,5);
     System.out.println(al); //NOTE:  this was listed as a, not al
-   //      al = buildRandomList(10,100);
-   //  al2 = buildRandomList(10,100);
-   // System.out.println(al);
-   // System.out.println(al2);
+        al = buildRandomList(10,100);
+        al2 = buildRandomList(10,100);
+        System.out.println("Testing Sum");
+         System.out.println(al);
+         System.out.println(al2);
+         alSum = sumLists(al,al2);
+        System.out.println(alSum);
    // System.out.println(alSum.sumLists(al,al2));
 
   
