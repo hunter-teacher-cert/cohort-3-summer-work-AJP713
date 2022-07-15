@@ -1,0 +1,20 @@
+Chapter 4, section 11, Excercise 1
+
+1) The output would be:
+"No, I wug."
+"You, wugga wug."
+"I wug."
+
+
+2) Stack Diagram 
+It's a bit tricky to draw in a .txt file but the brackets and indenting shows which class is in which.
+
+  [main                      
+     [zoop
+        [baffle
+          [ping]  
+        ]
+      ]
+  ]
+
+3) If you added baffle(); to the end of ping() each method would call the other back and forth forever, until there is some sort of memory or stack overflow error.  

@@ -1,0 +1,31 @@
+Chapter 5, Excercise 12
+
+1) Can be rewritten as:
+if (x > 0 && x < 10 ){
+  System.out.printls("positive single digit number.");
+}
+
+2)1) Stack diagram:
+[Main  
+  [clink(4)
+      [ zoop(breakfast, 4) ]
+  ]   
+]
+2)2) The program will display:
+
+"just for"
+"any not more"
+"It's breakfast"
+"!"
+
+
+3) Stack Diagram
+[nLines(4)
+  [nLines(3)
+    [nLines(2)
+      [nLines(1)
+        [nLines(0)]
+      ]
+    ]
+  ]
+]

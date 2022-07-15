@@ -1,0 +1,12 @@
+8.12  Excercises, #2)
+
+banana is a method that takes a list of integers and multiplies them all together and returns the product.
+kiwi is a variable used to keep track of the running product, it starts at 1.
+
+grapefruit is a method that tkaes a list of integers and one more integer.  It goes throught the list and checks if the integer inputted is in the list, if it is it returns the index # and if it's not it returns -1.
+grape is the integer value that the method is checking the list for.
+
+pineapple is a method takes a list of integers and another integer and goes through the list to count the number of times the integer is found in the list.  It returns this count.
+apple is the variable for the number that is searched for in the list and counted.
+pear is the running total, starting at 0 and increasing for each time the element is in the list. 
+

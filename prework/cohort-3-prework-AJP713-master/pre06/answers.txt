@@ -1,0 +1,24 @@
+Chapter 7.9  Excercise 1
+
+1) The varaibles at the end of each iteration of the loop
+
+i      n
+10    10
+5     10
+6      5
+3      6
+4      3
+2      4
+1      2
+ends
+
+2) Output
+10
+5
+6
+3
+4
+2
+
+3) This loop would terminate for any positive integer input of n.  Even numbers are divided in half while odd numbers only increase by one.  For all numbers greater than 2 dividing by two makes the number smaller than the addding one makes it larger.  There could be several divide by two in a row but there can only ever be one add one in a row because then it would switch to an even number and be divided.  The number will become smaller relatively fast and eventually reach one. 
+
