@@ -1,0 +1,58 @@
+Methods - Summer 2022
+
+CODE TRACING in the classroom
+======================================
+
+
+PROS:
+---------------------------------------
+<general positive aspects of incorporating code or algorithm tracing into a CS course, from your perspective>
+-- Understands how the computer processes information (steps and order)
+
+
+
+CONS:
+---------------------------------------
+<general negative aspects of incorporating code or algorithm tracing into a CS course, from your perspective>
+-- In complex situations the trace can be hard to follow
+
+BEST FOR:
+---------------------------------------
+<types of activities from courses you teach or have taught that could benefit from an emphasis on tracing>
+-- Recursion
+-- Loops
+-- Methods
+-- Variable Assignment
+-- Array
+
+
+LEAST-SUITED TO:
+---------------------------------------
+<opposite of above -- and why>
+-- 
+
+
+PROVEN PRO-TIPS:
+---------------------------------------
+<
+ anything that has worked well for any member of your team, in the way of ...
+ * live tracing ("trace-along" a la livecoding)
+ * tracing as an assignment
+ * tools, physical/online/otherwise that make it easier/clearer
+ * etc 
+>
+-- debugging
+-- color coding
+-- bracket types
+
+RESOURCES:
+---------------------------------------
+< any links, reading titles, names, etc. you have find useful 
+---Slack Channel
+-- https://visualgo.net/en
+>
+
+
+OTHER:
+---------------------------------------
+< anything you like, not already covered in prior prompts. >

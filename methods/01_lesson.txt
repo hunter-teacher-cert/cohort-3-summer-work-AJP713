@@ -1,6 +1,0 @@
-01 Lesson Plan
-
-Variable Creation and Assignment
-
-Phone Number example
-
