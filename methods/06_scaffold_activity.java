@@ -17,7 +17,7 @@ public class brickwall{
 // Overall Goal: make a method that takes 2 integer inputs (bricks wide and bricks tall) and draws a similar character image. 
 //Advanced: takes a 3rd input for how wide each brick is.  
 
-//Tests, uncomment each as you go
+//Tests, uncomment each pair of lines to test as you go
 //System.out.println("The line below should print a row of 5 full bricks");
 //System.out.println(fullRow(5));  
     
